@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#linkClose').click(function () {
+                $('#divError').hide('fade');
+            });
+
+
+            $("#btnLogin").click(function () {
+
+                $.ajax({
+                    url: '/token',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: {
+                        username: $('#txtUsername').val(),
+                        password: $('#txtPassword').val(),
+                        grant_type: 'password'
+                    },
+                    success: function (response) {
+                        //TML5的Storage主要分為兩種：localStorage與sessionStorage，
+                        //這兩者主要在生命週期上有較明顯的差別，localStorage的生命週期較長，
+                        //原則上要等到透過Javascript將內容清掉或者使用者清空Cache時才會消失；
+                        //而sessionStorage則是在Browser / Tab關閉時就會清空
+                        $('#divErrorText').text(JSON.stringify(response));
+                        $('#divError').show('fade');
+                        //localStorage.setItem('accessToken', response.access_token);
+                        sessionStorage.setItem('accessToken', response.access_token);
+                        //sessionStorage.setItem('accessToken',response.userName);
+                        localStorage.setItem('userName', response.userName);
+                        //alert(sessionStorage.getItem('userName'));
+                        //alert(sessionStorage.getItem('accessToken'));
+                        window.location.href = "Data.html";
+                        
+                    },
+                    error: function (jqXHR) {
+                        $('#divErrorText').text(jqXHR.responseText);
+                        $('#divError').show('fade');
+                    }
+                });
+
+
+            });
+
+
+        });
+    </script>
+</head>
+<body style="padding-top:20px">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="success">
+                        <td colspan="2">
+                            Existing User Login
+                            <a class="btn btn-success pull-right" href="Register.html">Register</a> 
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Username
+                        </td>
+                        <td>
+                            <input type="text" id="txtUsername" placeholder="Username" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            <input type="password" id="txtPassword" placeholder="Password" />
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr class="success">
+                        <td colspan="2">
+                            <input id="btnLogin" type="button" class="btn btn-success" value="Login" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div id="divError" class="alert alert-warning collapse">
+                <a id="linkClose" class="close" href="#">&times;</a>
+                <div id="divErrorText">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
