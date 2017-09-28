@@ -9,6 +9,8 @@ namespace Identity_WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            // 啟用追蹤功能
+            config.EnableSystemDiagnosticsTracing();
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

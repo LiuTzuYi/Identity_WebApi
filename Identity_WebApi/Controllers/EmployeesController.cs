@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Tracing;
 
 namespace Identity_WebApi.Controllers
 {
@@ -20,6 +21,7 @@ namespace Identity_WebApi.Controllers
     {
         public IEnumerable<Employee> GetEmployees() {
 
+            Configuration.Services.GetTraceWriter().Info(Request,"EmployeesController","使用trace");
             List<Employee> employees = new List<Employee>() {
               new Employee(){ ID="1", FirstName="AAA", LastName="000", Gender="M", Salary="40000" },
               new Employee(){ ID="2", FirstName="BBB", LastName="111", Gender="F", Salary="40000" },
