@@ -1,2 +1,11 @@
 ﻿Google
+OAuth 用戶端
+用戶端ID
+236960702636-ddvedktu0ctkmncutefhq33jqeoirhnj.apps.googleusercontent.com 
+用戶端密鑰
+aBbzZbVHoCSw5kd3QXXKRu9g 
+
+http://localhost:57978/api/account/ExternalLogins?returnUrl=http%3A%2F%2Flocalhost%3A57978%2FHtmls%2FLogin.html&generateState=true
+
+
 Facebook

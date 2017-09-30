@@ -10,6 +10,11 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
+            $('#btnGoogleLogin').click(function () {
+                window.location.href = "";
+
+            });
+
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
             });
@@ -94,6 +99,40 @@
                 </tbody>
             </table>
             
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="success">
+                        <td >
+                            Social Logins
+                         
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="button" id="btnGoogleLogin" value="Login with Google" class="btn btn-success" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="btnFacebookLogin" value="Login with Facebok" class="btn btn-success" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="btnTwitterLogin" value="Login with Twitter" class="btn btn-success" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="btnMicrosoftLogin" value="Login with Microsoft" class="btn btn-success" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div id="divError" class="alert alert-warning collapse">
                 <a id="linkClose" class="close" href="#">&times;</a>
                 <div id="divErrorText">

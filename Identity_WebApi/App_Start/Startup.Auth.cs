@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Identity_WebApi.Models;
+using Microsoft.Owin.Security.Google;
 
 namespace Identity_WebApi
 {
@@ -57,11 +58,11 @@ namespace Identity_WebApi
             //    appId: "",
             //    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "236960702636-ddvedktu0ctkmncutefhq33jqeoirhnj.apps.googleusercontent.com",
+                ClientSecret = "aBbzZbVHoCSw5kd3QXXKRu9g"
+            });
         }
     }
 }
