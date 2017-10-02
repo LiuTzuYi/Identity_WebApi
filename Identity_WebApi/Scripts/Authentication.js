@@ -21,7 +21,7 @@ function isUserRegistered(accessToken) {
         },
         success: function (response) {
             if (response.HasRegistered) {
-                localStorage.setItem('acessToken', accessToken);
+                localStorage.setItem('accessToken', accessToken);
                 localStorage.setItem('username', response.Email);
                 window.location.href = "Data.html";
             }
@@ -42,8 +42,7 @@ function signupExternalUser(accessToken,provider) {
             'Authorization': 'Bearer ' + accessToken
         },
         success: function (response) {
-            window.location.href = "/api/Account/ExternalLogin?provider=" + provider + "&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A57978%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
-
+            window.location.href = "/api/Account/ExternalLogin?provider=" + provider + "&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
         }
     });
   
