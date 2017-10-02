@@ -10,14 +10,14 @@
     <script src="../Scripts/Authentication.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            //getAccessToken();
+            getAccessToken();
             $('#btnGoogleLogin').click(function () {
-                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
 
             });
 
             $('#btnFacebookLogin').click(function () {
-                window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+                window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
             });
 
             $('#linkClose').click(function () {
@@ -122,7 +122,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="button" id="btnFacebookLogin" value="Login with Facebok" class="btn btn-success" />
+                            <input type="button" id="btnFacebookLogin" value="Login with Facebook" class="btn btn-success" />
                         </td>
                     </tr>
                     <tr>

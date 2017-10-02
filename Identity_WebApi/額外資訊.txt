@@ -5,7 +5,8 @@ api/Account/ExternalLogins?returnUrl=%2F&generateState=true
 [{"Name":"Google","Url":"/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2F&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1","State":"wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1"},
  {"Name":"Facebook","Url":"/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2F&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1","State":"wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1"}]
 
-
+/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html%2F&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1
+/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html%2F&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1
 
 
 OAuth 用戶端
@@ -14,11 +15,8 @@ OAuth 用戶端
 用戶端密鑰
 aBbzZbVHoCSw5kd3QXXKRu9g 
 
-http://localhost:57978/api/Account/ExternalLogins?returnUrl=%2F&generateState=true
 
-http://localhost:57978/api/account/ExternalLogin?provider=Google&response_type=token&client_id=self$redirect_uri=http%3A%2F%2Flocalhost%3A57978%2FLogin.html&state=xxxxxxxx
 
-window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A57978%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
 
 
 Facebook

@@ -82,7 +82,7 @@ namespace Identity_WebApi
                 AppId= "1886025231409161",
                 AppSecret= "c682843e3ad80c4ba0555905ee532e79",
                 BackchannelHttpHandler=new FacebookBackChannelHandler(),
-                UserInformationEndpoint= "https://graph.facebook.com/v2.4/me?fields=id,email"
+                UserInformationEndpoint= "https://graph.facebook.com/v2.8/me?fields=id,email"
             };
             facebookOptions.Scope.Add("email");
             app.UseFacebookAuthentication(facebookOptions);
