@@ -11,6 +11,8 @@ namespace Identity_WebApi
         {
             // 啟用追蹤功能
             config.EnableSystemDiagnosticsTracing();
+
+            config.SuppressDefaultHostAuthentication();
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

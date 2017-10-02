@@ -180,6 +180,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Htmls\Data.html" />
     <Content Include="Htmls\Login.html" />
+    <Content Include="Scripts\GoogleAuthentication.js" />
     <Content Include="WebApi 使用 Aspnet Identity.txt" />
     <Content Include="額外資訊.txt" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />

@@ -80,7 +80,7 @@ namespace Identity_WebApi.Controllers
                     ExternalLoginViewModel login = new ExternalLoginViewModel
                     {
                         Name = description.Caption,
-                        Url = Url.Route("ExternalLogins", new
+                        Url = Url.Route("ExternalLogin", new
                         {
                             provider = description.AuthenticationType,
                             response_type = "token",
