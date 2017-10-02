@@ -13,3 +13,7 @@ window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type
 
 
 Facebook
+AppId:1886025231409161
+AppSecret:c682843e3ad80c4ba0555905ee532e79
+
+https://graph.facebook.com/v2.4/me?fields=id,email

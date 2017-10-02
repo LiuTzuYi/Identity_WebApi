@@ -7,13 +7,17 @@
     <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <script src="../Scripts/jquery-3.2.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/GoogleAuthentication.js"></script>
+    <script src="../Scripts/Authentication.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            getAccessToken();
+            //getAccessToken();
             $('#btnGoogleLogin').click(function () {
-                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A57978%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
 
+            });
+
+            $('#btnFacebookLogin').click(function () {
+                window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
             });
 
             $('#linkClose').click(function () {

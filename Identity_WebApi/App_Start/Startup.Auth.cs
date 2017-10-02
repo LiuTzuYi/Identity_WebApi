@@ -10,6 +10,7 @@ using System.Web;
 using Identity_WebApi.Models;
 using Microsoft.Owin.Security.Google;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security.Facebook;
 
 namespace Identity_WebApi
 {
@@ -77,6 +78,14 @@ namespace Identity_WebApi
             //    appId: "",
             //    appSecret: "");
 
+            var facebookOptions = new FacebookAuthenticationOptions() {
+                AppId= "1886025231409161",
+                AppSecret= "c682843e3ad80c4ba0555905ee532e79",
+                BackchannelHttpHandler=new FacebookBackChannelHandler(),
+                UserInformationEndpoint= "https://graph.facebook.com/v2.4/me?fields=id,email"
+            };
+            facebookOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(facebookOptions);
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "236960702636-ddvedktu0ctkmncutefhq33jqeoirhnj.apps.googleusercontent.com",
