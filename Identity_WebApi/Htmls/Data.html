@@ -66,13 +66,15 @@
 
             $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
 
-            if (sessionStorage.getItem('accessToken') == null) {
+            if (localStorage.getItem('accessToken') == null) {
+                console.log('沒有 accessToken...');
                 window.location.href = "Login.html";
             }
 
             $('#btnLogoff').click(function () {
-                sessionStorage.removeItem('accessToken');
+                localStorage.removeItem('accessToken');
                 window.location.href = "Login.html";
+                console.log('移除 accessToken 令牌...');
             });
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
@@ -87,8 +89,9 @@
                     url: '/api/employees',
                     method: 'GET',
                     headers: {
-                        'Authorization': 'Bearer '
-                        + sessionStorage.getItem("accessToken")
+                        'Authorization': 'Bearer ' + localStorage.getItem("accessToken"),
+                        'content-type': 'application/JSON'
+                       
                     },
                     success: function (data) {
                         $('#divData').removeClass('hidden');
@@ -103,10 +106,13 @@
                         });
                     },
                     error: function (jQXHR) {
+                        //console.log(localStorage.getItem("accessToken"));
                         // If status code is 401, access token expired, so
                         // redirect the user to the login page
                         if (jQXHR.status == "401") {
                             $('#errorModal').modal('show');
+                            
+                            console.log('令牌過期或無效...');
                         }
                         else {
                             $('#divErrorText').text(jqXHR.responseText);

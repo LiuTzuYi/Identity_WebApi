@@ -7,17 +7,17 @@
     <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <script src="../Scripts/jquery-3.2.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/Authentication.js"></script>
+    <script src="../Scripts/AuthenticationAction.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             getAccessToken();
             $('#btnGoogleLogin').click(function () {
-                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
+                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FHtmls%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
 
             });
 
             $('#btnFacebookLogin').click(function () {
-                window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
+                window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A44312%2FHtmls%2FLogin.html&state=wgQ694ZQ79SBX7Mehe1gODykNjm3lKwg5PTVgMH6UyQ1";
             });
 
             $('#linkClose').click(function () {
@@ -37,7 +37,8 @@
                         grant_type: 'password'
                     },
                     success: function (response) {
-                        //TML5的Storage主要分為兩種：localStorage與sessionStorage，
+                        console.log('有');
+                        //HTML5的Storage主要分為兩種：localStorage與sessionStorage，
                         //這兩者主要在生命週期上有較明顯的差別，localStorage的生命週期較長，
                         //原則上要等到透過Javascript將內容清掉或者使用者清空Cache時才會消失；
                         //而sessionStorage則是在Browser / Tab關閉時就會清空
